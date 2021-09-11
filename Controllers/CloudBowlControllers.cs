@@ -22,13 +22,14 @@ namespace cloudbowl.samples.dotnet.Controllers
             Console.WriteLine(arenaUpdate);
             try
             {
-               /* */
-             var ps=   (PlayerState)arenaUpdate.arena.state.FirstOrDefault().Value();
-                if(ps!=null){
-                    ps.score=ps.score+10;
-                    ps.wasHit=false;
+                /* */
+                var ps = (PlayerState)arenaUpdate.arena.state.FirstOrDefault().Value;
+                if (ps != null)
+                {
+                    ps.score = ps.score + 10;
+                    ps.wasHit = false;
                 }
-                
+
 
                 string[] commands = new string[] { "F", "R", "L", "T" };
                 int i = new Random().Next(4);
@@ -37,7 +38,7 @@ namespace cloudbowl.samples.dotnet.Controllers
             catch (Exception)
             {
                 throw;
-           }
+            }
         }
     }
 }
