@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace cloudbowl.samples.dotnet.Controllers
@@ -19,17 +20,17 @@ namespace cloudbowl.samples.dotnet.Controllers
         [HttpPost]
         public string PostArenaUpdate(ArenaUpdate arenaUpdate)
         {
-            Console.WriteLine(arenaUpdate);
+            Console.WriteLine( Newtonsoft.Json.JsonConvert.SerializeObject(arenaUpdate));
             try
             {
-                /* */
+                /* 
                 var ps = (PlayerState)arenaUpdate.arena.state.FirstOrDefault().Value;
                 if (ps != null)
                 {
                     ps.score = ps.score + 10;
                     ps.wasHit = false;
                 }
-
+*/
 
                 string[] commands = new string[] { "F", "R", "L", "T" };
                 int i = new Random().Next(4);
