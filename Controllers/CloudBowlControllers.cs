@@ -32,7 +32,6 @@ namespace cloudbowl.samples.dotnet.Controllers
 
                 string[] commands = new string[] { "F", "R", "L", "T" };
                 int i = new Random().Next(4);
-
                 return commands[i];
             }
             catch (Exception)
